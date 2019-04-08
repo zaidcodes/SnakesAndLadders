@@ -23,7 +23,7 @@ namespace Juego
 
             tableroBotones = tablero.TableroBotones;
 
-            Controls.AddRange(tableroBotones);
+            PanelTablero.Controls.AddRange(tableroBotones);
 
         }
 

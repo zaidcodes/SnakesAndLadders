@@ -28,23 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.PanelInf = new System.Windows.Forms.Panel();
+            this.PanelTablero = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // panel1
+            // PanelInf
             // 
-            this.panel1.Location = new System.Drawing.Point(424, 62);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 0;
+            this.PanelInf.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PanelInf.Location = new System.Drawing.Point(0, 550);
+            this.PanelInf.Name = "PanelInf";
+            this.PanelInf.Size = new System.Drawing.Size(700, 100);
+            this.PanelInf.TabIndex = 0;
+            // 
+            // PanelTablero
+            // 
+            this.PanelTablero.Location = new System.Drawing.Point(86, 0);
+            this.PanelTablero.Name = "PanelTablero";
+            this.PanelTablero.Size = new System.Drawing.Size(504, 551);
+            this.PanelTablero.TabIndex = 1;
             // 
             // IntPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.ClientSize = new System.Drawing.Size(700, 550);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(700, 650);
+            this.Controls.Add(this.PanelTablero);
+            this.Controls.Add(this.PanelInf);
             this.Name = "IntPrincipal";
             this.Text = "Serpientes y Escaleras";
             this.ResumeLayout(false);
@@ -53,7 +63,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel PanelInf;
+        private System.Windows.Forms.Panel PanelTablero;
     }
 }
 

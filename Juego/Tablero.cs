@@ -31,13 +31,15 @@ namespace Juego
                 contX = (dirBtn) ? 0 : 9;
                 for (int k = 0; k < 10; k++)
                 {
-                    tableroBotones[contCasilla] = new Button();
-                    tableroBotones[contCasilla].Size = new Size(50, 50);
-                    tableroBotones[contCasilla].Location = new Point(((dirBtn) ? contX++ : contX--) * 50, 
-                        contY * 50);
-                    tableroBotones[contCasilla].FlatStyle = FlatStyle.Flat;
-                    tableroBotones[contCasilla].ForeColor = Color.CornflowerBlue;
-                    tableroBotones[contCasilla].Text = (contCasilla + 1).ToString();
+                    tableroBotones[contCasilla] = new Button
+                    {
+                        Size = new Size(50, 50),
+                        Location = new Point(((dirBtn) ? contX++ : contX--) * 50,
+                        contY * 50),
+                        FlatStyle = FlatStyle.Flat,
+                        ForeColor = Color.CornflowerBlue,
+                        Text = (contCasilla + 1).ToString()
+                    };
                     contCasilla++;
                 }
                 dirBtn = !dirBtn;
