@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace Juego
 {
-    class Tablero
+    public class Tablero
     {
 
         private Button[] tableroBotones;
@@ -45,6 +45,31 @@ namespace Juego
                 dirBtn = !dirBtn;
                 contY--;
             }
+        }
+
+        public void CrearSerpientes(Panel panel, PaintEventArgs e)
+        {
+            Graphics papel;
+
+            Pen lapiz = new Pen(Color.Green);
+
+            papel = e.Graphics;
+
+            papel.DrawLine(lapiz, CentroInf(tableroBotones[99].Location), CentroSup(tableroBotones[9].Location));
+
+            lapiz.Dispose();
+            papel.Dispose();
+
+        }
+
+        private Point CentroInf(Point punto)
+        {
+            return new Point(punto.X + 25, punto.Y + 40);
+        }
+
+        private Point CentroSup(Point punto)
+        {
+            return new Point(punto.X + 25, punto.Y + 10);
         }
 
     }

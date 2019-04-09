@@ -15,17 +15,36 @@ namespace Juego
 
         Button[] tableroBotones;
 
+        Tablero tablero;
+
+        Juego juego = new Juego();
+
         public IntPrincipal()
         {
             InitializeComponent();
 
-            Tablero tablero = new Tablero();
+            tablero = new Tablero();
 
             tableroBotones = tablero.TableroBotones;
 
             PanelTablero.Controls.AddRange(tableroBotones);
 
+            LblPruebas.Text = tableroBotones[99].Location.X + "," + tableroBotones[99].Location.Y;
+
         }
 
+        private void PanelTablero_Paint(object sender, PaintEventArgs e)
+        {
+            tablero.CrearSerpientes(sender as Panel, e);
+        }
+
+        private void IntPrincipal_Shown(object sender, EventArgs e)
+        {
+            IntConfigJuego configJuego = new IntConfigJuego(juego);
+
+            configJuego.Show();
+
+        }
+        
     }
 }

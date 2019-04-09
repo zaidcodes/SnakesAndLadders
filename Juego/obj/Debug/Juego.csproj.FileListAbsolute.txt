@@ -18,3 +18,4 @@ C:\Users\Eddys\source\repos\Juego\Juego\obj\Debug\Juego.csproj.GenerateResource.
 C:\Users\Eddys\source\repos\Juego\Juego\obj\Debug\Juego.csproj.CoreCompileInputs.cache
 C:\Users\Eddys\source\repos\Juego\Juego\obj\Debug\Juego.exe
 C:\Users\Eddys\source\repos\Juego\Juego\obj\Debug\Juego.pdb
+C:\Users\Eddys\source\repos\Juego\Juego\obj\Debug\Juego.IntConfigJuego.resources

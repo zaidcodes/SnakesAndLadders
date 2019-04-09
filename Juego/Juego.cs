@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Juego
 {
-    class Juego
+    public class Juego
     {
 
         private Jugador[] jugadores;
@@ -23,6 +23,11 @@ namespace Juego
             tablero = new Tablero();
             dado1 = new Dado();
             dado2 = new Dado();
+        }
+
+        public void AgregarJugadores(Jugador[] jugadores)
+        {
+            this.jugadores = jugadores;
         }
 
     }

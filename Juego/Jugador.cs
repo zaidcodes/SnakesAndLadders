@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Juego
 {
 
-    class Jugador
+    public class Jugador
     {
 
         private String nombre;
@@ -26,9 +26,9 @@ namespace Juego
             posicion += posiciones;
         }
 
-        public void Retroceder(int posiciones)
+        public void Retroceder(int posicion)
         {
-            posicion -= posiciones;
+            this.posicion = posicion;
         }
 
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Juego
 {
-    class Dado
+    public class Dado
     {
 
         private int valor;
