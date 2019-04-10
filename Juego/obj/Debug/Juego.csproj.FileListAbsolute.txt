@@ -19,3 +19,4 @@ C:\Users\Eddys\source\repos\Juego\Juego\obj\Debug\Juego.csproj.CoreCompileInputs
 C:\Users\Eddys\source\repos\Juego\Juego\obj\Debug\Juego.exe
 C:\Users\Eddys\source\repos\Juego\Juego\obj\Debug\Juego.pdb
 C:\Users\Eddys\source\repos\Juego\Juego\obj\Debug\Juego.IntConfigJuego.resources
+C:\Users\Juan Pablo\source\repos\Juego\Juego\obj\Debug\Juego.IntConfigJuego.resources

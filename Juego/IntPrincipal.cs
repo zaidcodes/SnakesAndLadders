@@ -41,8 +41,13 @@ namespace Juego
         private void IntPrincipal_Shown(object sender, EventArgs e)
         {
             IntConfigJuego configJuego = new IntConfigJuego(juego);
-
+            configJuego.FormClosing += new FormClosingEventHandler(IntPrincipal_FormClosing);
             configJuego.Show();
+
+        }
+
+        private void IntPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
 
         }
         

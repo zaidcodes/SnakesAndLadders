@@ -12,6 +12,7 @@ namespace Juego
         private Jugador[] jugadores;
         private Tablero tablero;
         private Dado dado1, dado2;
+        private int estadoJugador;
 
         public Jugador[] Jugadores { get => jugadores; set => jugadores = value; }
         public Tablero Tablero { get => tablero; set => tablero = value; }
@@ -23,12 +24,20 @@ namespace Juego
             tablero = new Tablero();
             dado1 = new Dado();
             dado2 = new Dado();
+            estadoJugador = 1;
         }
 
         public void AgregarJugadores(Jugador[] jugadores)
         {
             this.jugadores = jugadores;
         }
+
+        public void SiguienteJugador()
+        {
+            estadoJugador = (estadoJugador == jugadores.Length) ? 1 : estadoJugador++;
+        }
+
+
 
     }
 }
