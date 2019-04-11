@@ -10,19 +10,23 @@ namespace Juego
     {
 
         private int valor;
-        private Random random;
+        private static Random random = new Random();
 
         public int Valor { get => valor; set => valor = value; }
 
         public Dado()
         {
             Valor = 0;
-            random = new Random();
         }
 
         public void Caer()
         {
             Valor = random.Next(1, 7);
+        }
+
+        public static int operator +(Dado dado1, Dado dado2)
+        {
+            return dado1.Valor + dado2.Valor;
         }
 
     }

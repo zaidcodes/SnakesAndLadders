@@ -19,6 +19,7 @@ namespace Juego
         public Jugador(String nombre)
         {
             this.nombre = nombre;
+            posicion = 0;
         }
 
         public void Avanzar(int posiciones)
@@ -29,6 +30,15 @@ namespace Juego
         public void Retroceder(int posicion)
         {
             this.posicion = posicion;
+        }
+
+        public int LanzarDados(Dado dado1, Dado dado2)
+        {
+            dado1.Caer();
+            dado2.Caer();
+
+            return dado1 + dado2;
+
         }
 
     }

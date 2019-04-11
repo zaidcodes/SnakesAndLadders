@@ -102,5 +102,8 @@
   <ItemGroup>
     <None Include="Resources\baseline_remove_white_48dp.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SnakesTablero.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

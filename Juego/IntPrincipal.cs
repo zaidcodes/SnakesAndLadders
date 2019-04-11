@@ -19,6 +19,10 @@ namespace Juego
 
         Juego juego = new Juego();
 
+        Label[] lblJugadores;
+
+        Label[] lblPuntuacion;
+
         public IntPrincipal()
         {
             InitializeComponent();
@@ -29,13 +33,26 @@ namespace Juego
 
             PanelTablero.Controls.AddRange(tableroBotones);
 
-            LblPruebas.Text = tableroBotones[99].Location.X + "," + tableroBotones[99].Location.Y;
+            lblJugadores = new Label[] { lblNomJug1, lblNomJug2, lblNomJug3, lblNomJug4 };
+
+            lblPuntuacion = new Label[] { lblPuntJug1, lblPuntJug2, lblPuntJug3, lblPuntJug4 };
 
         }
 
         private void PanelTablero_Paint(object sender, PaintEventArgs e)
         {
-            tablero.CrearSerpientes(sender as Panel, e);
+            Graphics graphics = e.Graphics;
+
+            Pen lapiz = new Pen(Color.LawnGreen);
+
+           
+
+            graphics.DrawEllipse(lapiz, new RectangleF(new PointF(10, 10), new SizeF(30, 30)));
+
+            graphics.Dispose();
+
+            lapiz.Dispose();
+
         }
 
         private void IntPrincipal_Shown(object sender, EventArgs e)
@@ -48,8 +65,40 @@ namespace Juego
 
         private void IntPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
+            for(int i = 0; i < juego.Jugadores.Length; i++)
+            {
+                lblJugadores[i].Visible = true;
+                lblPuntuacion[i].Visible = true;
+                lblJugadores[i].Text = juego.Jugadores[i].Nombre;
+                Actualizar();
+            }
 
         }
-        
+
+        public void Actualizar()
+        {
+            for (int i = 0; i < juego.Jugadores.Length; i++)
+            {
+                lblPuntuacion[i].Text = juego.Jugadores[i].Posicion.ToString();
+            }
+            LblPruebas.Text = "Turno de " + juego.Jugadores[juego.estadoJugador - 1].Nombre + 
+                "\nDado1 = " + juego.Dado1.Valor + " Dado2 = " + juego.Dado2.Valor;
+        }
+
+        private void btnLanzar_Click(object sender, EventArgs e)
+        {
+            juego.Lanzar();
+            juego.SiguienteJugador();
+            Actualizar();
+
+            Graphics graphics = PanelTablero.CreateGraphics();
+
+            Pen lapiz = new Pen(Color.LawnGreen);
+
+            Random random = new Random();
+
+            graphics.DrawEllipse(lapiz, new RectangleF(new PointF(random.Next(1,500), random.Next(1, 500)), new SizeF(random.Next(1, 200), random.Next(1, 300))));
+
+        }
     }
 }

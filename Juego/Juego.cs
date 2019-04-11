@@ -12,7 +12,7 @@ namespace Juego
         private Jugador[] jugadores;
         private Tablero tablero;
         private Dado dado1, dado2;
-        private int estadoJugador;
+        public int estadoJugador;
 
         public Jugador[] Jugadores { get => jugadores; set => jugadores = value; }
         public Tablero Tablero { get => tablero; set => tablero = value; }
@@ -34,10 +34,16 @@ namespace Juego
 
         public void SiguienteJugador()
         {
-            estadoJugador = (estadoJugador == jugadores.Length) ? 1 : estadoJugador++;
+            estadoJugador = (estadoJugador == jugadores.Length) ? 1 : estadoJugador + 1;
         }
 
+        public void Lanzar()
+        {
+            int lanzamiento = jugadores[estadoJugador - 1].LanzarDados(dado1,dado2);
 
+            jugadores[estadoJugador - 1].Avanzar(lanzamiento);
+
+        }
 
     }
 }
