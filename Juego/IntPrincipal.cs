@@ -31,11 +31,14 @@ namespace Juego
         {
             InitializeComponent();
 
+            //SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+            //SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+
             tablero = new Tablero();
 
             tableroBotones = tablero.TableroBotones;
 
-            PanelTablero.Controls.AddRange(tableroBotones);
+            //PanelTablero.Controls.AddRange(tableroBotones);
 
             lblJugadores = new Label[] { lblNomJug1, lblNomJug2, lblNomJug3, lblNomJug4 };
 
@@ -140,12 +143,12 @@ namespace Juego
 
         public void MoverUnaPosicion(int jugador, Point destino)
         {
-            for (int i = 0; i < 300; i++)
-            {
-                timer1.Start();
-                crcJugadores[jugador].X += 1;
-                Thread.Sleep(50);
-            }
+            //for (int i = 0; i < 300; i++)
+            //{
+            //    timer1.Start();
+            //    crcJugadores[jugador].X += 1;
+            //    Thread.Sleep(50);
+            //}
             /*while (crcJugadores[jugador].X != destino.X && crcJugadores[jugador].Y != destino.Y)
             {
                 if (crcJugadores[jugador].X < destino.X)

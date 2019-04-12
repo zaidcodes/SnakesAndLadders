@@ -105,7 +105,9 @@
             // PanelTablero
             // 
             this.PanelTablero.BackColor = System.Drawing.Color.Transparent;
-            this.PanelTablero.Location = new System.Drawing.Point(244, 0);
+            this.PanelTablero.BackgroundImage = global::Juego.Properties.Resources.Tablero;
+            this.PanelTablero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.PanelTablero.Location = new System.Drawing.Point(241, 0);
             this.PanelTablero.Name = "PanelTablero";
             this.PanelTablero.Size = new System.Drawing.Size(504, 501);
             this.PanelTablero.TabIndex = 1;
