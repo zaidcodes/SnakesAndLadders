@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.PanelInf = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -43,6 +44,7 @@
             this.lblNomJug3 = new System.Windows.Forms.Label();
             this.lblNomJug2 = new System.Windows.Forms.Label();
             this.lblNomJug1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.PanelInf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -106,8 +108,8 @@
             this.PanelTablero.Location = new System.Drawing.Point(244, 0);
             this.PanelTablero.Name = "PanelTablero";
             this.PanelTablero.Size = new System.Drawing.Size(504, 501);
-            this.PanelTablero.Paint += new System.Windows.Forms.PaintEventHandler(PanelTablero_Paint);
             this.PanelTablero.TabIndex = 1;
+            this.PanelTablero.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelTablero_Paint);
             // 
             // panel1
             // 
@@ -220,6 +222,12 @@
             this.lblNomJug1.Text = "lblNomJug1";
             this.lblNomJug1.Visible = false;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // IntPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,6 +267,7 @@
         private System.Windows.Forms.Label lblPuntJug1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

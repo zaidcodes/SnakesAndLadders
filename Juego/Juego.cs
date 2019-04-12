@@ -12,12 +12,15 @@ namespace Juego
         private Jugador[] jugadores;
         private Tablero tablero;
         private Dado dado1, dado2;
-        public int estadoJugador;
+        private int estadoJugador;
+        public int CantJugadores;
+
 
         public Jugador[] Jugadores { get => jugadores; set => jugadores = value; }
         public Tablero Tablero { get => tablero; set => tablero = value; }
         public Dado Dado1 { get => dado1; set => dado1 = value; }
         public Dado Dado2 { get => dado2; set => dado2 = value; }
+        public int EstadoJugador { get => estadoJugador; set => estadoJugador = value; }
 
         public Juego()
         {
@@ -30,6 +33,7 @@ namespace Juego
         public void AgregarJugadores(Jugador[] jugadores)
         {
             this.jugadores = jugadores;
+            CantJugadores = this.jugadores.Length;
         }
 
         public void SiguienteJugador()

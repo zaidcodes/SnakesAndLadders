@@ -12,14 +12,17 @@ namespace Juego
 
         private String nombre;
         private int posicion;
+        private int posicionActual;
 
         public int Posicion { get => posicion; set => posicion = value; }
         public string Nombre { get => nombre; set => nombre = value; }
+        public int PosicionActual { get => posicionActual; set => posicionActual = value; }
 
         public Jugador(String nombre)
         {
             this.nombre = nombre;
-            posicion = 0;
+            posicion = 1;
+            posicionActual = 1;
         }
 
         public void Avanzar(int posiciones)
