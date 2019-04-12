@@ -38,7 +38,6 @@
             this.Del4Jugador = new System.Windows.Forms.PictureBox();
             this.btnIniciar = new System.Windows.Forms.Button();
             this.Del3Jugador = new System.Windows.Forms.PictureBox();
-            this.lblPruebas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Add3Jugador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Add4Jugador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Del4Jugador)).BeginInit();
@@ -48,11 +47,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Location = new System.Drawing.Point(66, 23);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(109)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(101, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 18);
+            this.label1.Size = new System.Drawing.Size(98, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Jugadores";
             // 
@@ -60,20 +59,20 @@
             // 
             this.txtBox1Jugador.Location = new System.Drawing.Point(12, 55);
             this.txtBox1Jugador.Name = "txtBox1Jugador";
-            this.txtBox1Jugador.Size = new System.Drawing.Size(163, 20);
+            this.txtBox1Jugador.Size = new System.Drawing.Size(213, 20);
             this.txtBox1Jugador.TabIndex = 1;
             // 
             // txtBox2Jugador
             // 
             this.txtBox2Jugador.Location = new System.Drawing.Point(12, 81);
             this.txtBox2Jugador.Name = "txtBox2Jugador";
-            this.txtBox2Jugador.Size = new System.Drawing.Size(163, 20);
+            this.txtBox2Jugador.Size = new System.Drawing.Size(213, 20);
             this.txtBox2Jugador.TabIndex = 2;
             // 
             // Add3Jugador
             // 
             this.Add3Jugador.Image = global::Juego.Properties.Resources.baseline_add_white_48dp;
-            this.Add3Jugador.Location = new System.Drawing.Point(181, 81);
+            this.Add3Jugador.Location = new System.Drawing.Point(239, 81);
             this.Add3Jugador.Name = "Add3Jugador";
             this.Add3Jugador.Size = new System.Drawing.Size(21, 20);
             this.Add3Jugador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -85,7 +84,7 @@
             // 
             this.txtBox3Jugador.Location = new System.Drawing.Point(12, 107);
             this.txtBox3Jugador.Name = "txtBox3Jugador";
-            this.txtBox3Jugador.Size = new System.Drawing.Size(163, 20);
+            this.txtBox3Jugador.Size = new System.Drawing.Size(213, 20);
             this.txtBox3Jugador.TabIndex = 4;
             this.txtBox3Jugador.Visible = false;
             // 
@@ -93,14 +92,14 @@
             // 
             this.txtBox4Jugador.Location = new System.Drawing.Point(12, 133);
             this.txtBox4Jugador.Name = "txtBox4Jugador";
-            this.txtBox4Jugador.Size = new System.Drawing.Size(163, 20);
+            this.txtBox4Jugador.Size = new System.Drawing.Size(213, 20);
             this.txtBox4Jugador.TabIndex = 5;
             this.txtBox4Jugador.Visible = false;
             // 
             // Add4Jugador
             // 
             this.Add4Jugador.Image = global::Juego.Properties.Resources.baseline_add_white_48dp;
-            this.Add4Jugador.Location = new System.Drawing.Point(181, 107);
+            this.Add4Jugador.Location = new System.Drawing.Point(239, 107);
             this.Add4Jugador.Name = "Add4Jugador";
             this.Add4Jugador.Size = new System.Drawing.Size(21, 20);
             this.Add4Jugador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -112,7 +111,7 @@
             // Del4Jugador
             // 
             this.Del4Jugador.Image = global::Juego.Properties.Resources.baseline_remove_white_48dp;
-            this.Del4Jugador.Location = new System.Drawing.Point(181, 133);
+            this.Del4Jugador.Location = new System.Drawing.Point(239, 133);
             this.Del4Jugador.Name = "Del4Jugador";
             this.Del4Jugador.Size = new System.Drawing.Size(21, 20);
             this.Del4Jugador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -123,9 +122,12 @@
             // 
             // btnIniciar
             // 
-            this.btnIniciar.Location = new System.Drawing.Point(69, 174);
+            this.btnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIniciar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(109)))), ((int)(((byte)(0)))));
+            this.btnIniciar.Location = new System.Drawing.Point(106, 175);
             this.btnIniciar.Name = "btnIniciar";
-            this.btnIniciar.Size = new System.Drawing.Size(75, 23);
+            this.btnIniciar.Size = new System.Drawing.Size(83, 30);
             this.btnIniciar.TabIndex = 8;
             this.btnIniciar.Text = "Iniciar";
             this.btnIniciar.UseVisualStyleBackColor = true;
@@ -134,7 +136,7 @@
             // Del3Jugador
             // 
             this.Del3Jugador.Image = global::Juego.Properties.Resources.baseline_remove_white_48dp;
-            this.Del3Jugador.Location = new System.Drawing.Point(208, 107);
+            this.Del3Jugador.Location = new System.Drawing.Point(266, 107);
             this.Del3Jugador.Name = "Del3Jugador";
             this.Del3Jugador.Size = new System.Drawing.Size(21, 20);
             this.Del3Jugador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -143,25 +145,12 @@
             this.Del3Jugador.Visible = false;
             this.Del3Jugador.Click += new System.EventHandler(this.Del3Jugador_Click);
             // 
-            // lblPruebas
-            // 
-            this.lblPruebas.AutoSize = true;
-            this.lblPruebas.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblPruebas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPruebas.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblPruebas.Location = new System.Drawing.Point(385, 97);
-            this.lblPruebas.Name = "lblPruebas";
-            this.lblPruebas.Size = new System.Drawing.Size(59, 16);
-            this.lblPruebas.TabIndex = 10;
-            this.lblPruebas.Text = "Pruebas";
-            // 
             // IntConfigJuego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.ClientSize = new System.Drawing.Size(537, 308);
-            this.Controls.Add(this.lblPruebas);
+            this.ClientSize = new System.Drawing.Size(302, 217);
             this.Controls.Add(this.Del3Jugador);
             this.Controls.Add(this.btnIniciar);
             this.Controls.Add(this.Del4Jugador);
@@ -195,6 +184,5 @@
         private System.Windows.Forms.PictureBox Del4Jugador;
         private System.Windows.Forms.Button btnIniciar;
         private System.Windows.Forms.PictureBox Del3Jugador;
-        private System.Windows.Forms.Label lblPruebas;
     }
 }

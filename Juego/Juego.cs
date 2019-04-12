@@ -14,6 +14,10 @@ namespace Juego
         private Dado dado1, dado2;
         private int estadoJugador;
         public int CantJugadores;
+        private int[] SerpientesOrigen;
+        private int[] SerpientesDestino;
+        private int[] EscalerasOrigen;
+        private int[] EscalerasDestino;
 
 
         public Jugador[] Jugadores { get => jugadores; set => jugadores = value; }
@@ -28,6 +32,10 @@ namespace Juego
             dado1 = new Dado();
             dado2 = new Dado();
             estadoJugador = 1;
+            SerpientesOrigen = new int[] {99, 88, 60, 53, 36};
+            SerpientesDestino = new int[] {65, 51, 29, 3, 5};
+            EscalerasOrigen = new int[] {8, 30, 38, 66, 56};
+            EscalerasDestino = new int[] {34, 70, 62, 91, 82};
         }
 
         public void AgregarJugadores(Jugador[] jugadores)
@@ -47,6 +55,28 @@ namespace Juego
 
             jugadores[estadoJugador - 1].Avanzar(lanzamiento);
 
+        }
+
+        public void VerificarCasilla()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                if(SerpientesOrigen[i] == jugadores[estadoJugador - 1].Posicion)
+                {
+                    jugadores[estadoJugador - 1].Descender(SerpientesDestino[i]);
+                    break;
+                }
+                if(EscalerasOrigen[i] == jugadores[estadoJugador - 1].Posicion)
+                {
+                    jugadores[estadoJugador - 1].Ascender(EscalerasDestino[i]);
+                    break;
+                }
+            }
+        }
+
+        public String Ganador(Jugador jugador)
+        {
+            return "¡Felicidades " + jugador.Nombre + " has ganado la partida!";
         }
 
     }

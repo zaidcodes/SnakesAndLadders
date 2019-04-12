@@ -28,9 +28,24 @@ namespace Juego
         public void Avanzar(int posiciones)
         {
             posicion += posiciones;
+            if(posicion > 100)
+            {
+                int restante = posicion - 100;
+                Retroceder(restante);
+            }
         }
 
-        public void Retroceder(int posicion)
+        public void Retroceder(int posiciones)
+        {
+            posicion = 100 - posiciones;
+        }
+
+        public void Descender(int posicion)
+        {
+            this.posicion = posicion;
+        }
+
+        public void Ascender(int posicion)
         {
             this.posicion = posicion;
         }

@@ -108,5 +108,11 @@
   <ItemGroup>
     <None Include="Resources\Tablero.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Punto.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

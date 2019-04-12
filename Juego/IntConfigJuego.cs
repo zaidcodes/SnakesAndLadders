@@ -22,11 +22,11 @@ namespace Juego
         public IntConfigJuego(Juego juego)
         {
             InitializeComponent();
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            MaximizeBox = false;
+            CenterToParent();
             txtBoxJugadores = new TextBox[] {txtBox1Jugador,txtBox2Jugador,txtBox3Jugador,txtBox4Jugador};
             this.juego = juego;
-
-            lblPruebas.Text = cantJugadores.ToString();
-
         }
 
         private void Add3Jugador_Click(object sender, EventArgs e)
@@ -37,9 +37,6 @@ namespace Juego
             Del3Jugador.Visible = true;
 
             cantJugadores++;
-
-            lblPruebas.Text = cantJugadores.ToString();
-
         }
 
         private void Add4Jugador_Click(object sender, EventArgs e)
@@ -50,9 +47,6 @@ namespace Juego
             Del4Jugador.Visible = true;
 
             cantJugadores++;
-
-            lblPruebas.Text = cantJugadores.ToString();
-
         }
 
         private void Del4Jugador_Click(object sender, EventArgs e)
@@ -65,9 +59,6 @@ namespace Juego
             txtBox4Jugador.Text = "";
 
             cantJugadores--;
-
-            lblPruebas.Text = cantJugadores.ToString();
-
         }
 
         private void Del3Jugador_Click(object sender, EventArgs e)
@@ -80,9 +71,6 @@ namespace Juego
             txtBox3Jugador.Text = "";
 
             cantJugadores--;
-
-            lblPruebas.Text = cantJugadores.ToString();
-
         }
 
         private void BtnIniciar_Click(object sender, EventArgs e)
