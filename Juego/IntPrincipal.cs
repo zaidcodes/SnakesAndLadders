@@ -42,7 +42,7 @@ namespace Juego
             MaximizeBox = false;
             CenterToScreen();
 
-            Azul = Color.FromArgb(13, 71, 161);
+            Azul = Color.FromArgb(255, 253, 231);
             Verde = Color.FromArgb(100, 221, 23);
             Rojo = Color.FromArgb(229, 57, 53);
             Amarillo = Color.FromArgb(255, 234, 0);
@@ -83,6 +83,7 @@ namespace Juego
         {
             if (juego.Jugadores != null)
             {
+                btnLanzar.ForeColor = colores[0];
                 lblJugador.Visible = true;
                 lblPosicion.Visible = true;
                 btnLanzar.Visible = true;
@@ -110,6 +111,8 @@ namespace Juego
                 lblPuntuacion[i].Text = juego.Jugadores[i].Posicion.ToString();
             }
             LblPruebas.Text = "Turno Actual\n" + juego.Jugadores[juego.EstadoJugador - 1].Nombre;
+
+            btnLanzar.ForeColor = colores[juego.EstadoJugador - 1];
 
             lblSuma.Text = "Suma = " + (juego.Dado1.Valor + juego.Dado2.Valor);
 
