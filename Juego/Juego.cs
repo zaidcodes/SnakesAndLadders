@@ -1,23 +1,24 @@
-﻿using System;
+﻿using Juego.Casillas;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Juego
-{
-    public class Juego
-    {
+namespace Juego {
+    public class Juego {
 
         private Jugador[] jugadores;
         private Tablero tablero;
         private Dado dado1, dado2;
         private int estadoJugador;
         public int CantJugadores;
-        private int[] SerpientesOrigen;
-        private int[] SerpientesDestino;
-        private int[] EscalerasOrigen;
-        private int[] EscalerasDestino;
+        private List<Obstaculo> Obstaculos = new List<Obstaculo>();
+        private bool SentidoAscendente = true; //true: 1,2,3,4 false: 4,3,2,1
+        private static readonly string RutaJSON = "..\\..\\JSON\\Tableros.json";
 
 
         public Jugador[] Jugadores { get => jugadores; set => jugadores = value; }
@@ -26,56 +27,57 @@ namespace Juego
         public Dado Dado2 { get => dado2; set => dado2 = value; }
         public int EstadoJugador { get => estadoJugador; set => estadoJugador = value; }
 
-        public Juego()
-        {
+        public Juego() {
             tablero = new Tablero();
             dado1 = new Dado();
             dado2 = new Dado();
             estadoJugador = 1;
-            SerpientesOrigen = new int[] {99, 88, 60, 53, 36};
-            SerpientesDestino = new int[] {65, 51, 29, 3, 5};
-            EscalerasOrigen = new int[] {8, 30, 38, 66, 56};
-            EscalerasDestino = new int[] {34, 70, 62, 91, 82};
+
+            GenerarObstaculos();
+
         }
 
-        public void AgregarJugadores(Jugador[] jugadores)
-        {
+        public void AgregarJugadores(Jugador[] jugadores) {
             this.jugadores = jugadores;
             CantJugadores = this.jugadores.Length;
         }
 
-        public void SiguienteJugador()
-        {
-            estadoJugador = (estadoJugador == jugadores.Length) ? 1 : estadoJugador + 1;
+        public void SiguienteJugador() {
+            if (SentidoAscendente) {
+                estadoJugador = (estadoJugador == jugadores.Length) ? 1 : estadoJugador + 1;
+            } else {
+                estadoJugador = (estadoJugador == 1) ? jugadores.Length : estadoJugador - 1;
+            }
         }
 
-        public void Lanzar()
-        {
-            int lanzamiento = jugadores[estadoJugador - 1].LanzarDados(dado1,dado2);
+        public void Lanzar() {
+            int lanzamiento = jugadores[estadoJugador - 1].LanzarDados(dado1, dado2);
 
             jugadores[estadoJugador - 1].Avanzar(lanzamiento);
 
         }
 
-        public void VerificarCasilla()
-        {
-            for (int i = 0; i < 5; i++)
-            {
-                if(SerpientesOrigen[i] == jugadores[estadoJugador - 1].Posicion)
-                {
-                    jugadores[estadoJugador - 1].Descender(SerpientesDestino[i]);
-                    break;
-                }
-                if(EscalerasOrigen[i] == jugadores[estadoJugador - 1].Posicion)
-                {
-                    jugadores[estadoJugador - 1].Ascender(EscalerasDestino[i]);
-                    break;
-                }
+        public void VerificarCasilla() {
+            Jugador jugador = jugadores[estadoJugador - 1];
+            foreach (Obstaculo obstaculo in Obstaculos) {
+                //Descomentar el siguiente "if" si solo quiere establecer un tipo de casilla por casilla, valga la redundancia.
+                //if (obstaculo.VerificarCasilla(this, jugador) == true)
+                //    break;
+                obstaculo.VerificarCasilla(this, jugador);
             }
         }
 
-        public String Ganador(Jugador jugador)
-        {
+        public void GenerarObstaculos() {            
+            Obstaculos.AddRange(ServiceRevertirSerntidoJSON.GetRevertirSerntidoFromJSON(RutaJSON, 1));
+            Obstaculos.AddRange(ServiceEscaleraJSON.GetEscalerasFromJSON(RutaJSON, 1));
+            Obstaculos.AddRange(ServiceSerpienteJSON.GetSerpientesFromJSON(RutaJSON, 1));
+        }
+
+        public void CambiarSentido() {
+            SentidoAscendente = (SentidoAscendente == true) ? false : true;
+        }
+
+        public String Ganador(Jugador jugador) {
             return "¡Felicidades " + jugador.Nombre + " has ganado la partida!";
         }
 
