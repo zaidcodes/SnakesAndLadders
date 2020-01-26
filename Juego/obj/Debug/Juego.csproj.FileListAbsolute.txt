@@ -20,3 +20,17 @@ C:\Users\Eddys\source\repos\Juego\Juego\obj\Debug\Juego.exe
 C:\Users\Eddys\source\repos\Juego\Juego\obj\Debug\Juego.pdb
 C:\Users\Eddys\source\repos\Juego\Juego\obj\Debug\Juego.IntConfigJuego.resources
 C:\Users\Juan Pablo\source\repos\Juego\Juego\obj\Debug\Juego.IntConfigJuego.resources
+C:\Users\Julio\source\repos\SnakesAndLadders\Juego\bin\Debug\Juego.exe.config
+C:\Users\Julio\source\repos\SnakesAndLadders\Juego\bin\Debug\Juego.exe
+C:\Users\Julio\source\repos\SnakesAndLadders\Juego\bin\Debug\Juego.pdb
+C:\Users\Julio\source\repos\SnakesAndLadders\Juego\obj\Debug\Juego.IntConfigJuego.resources
+C:\Users\Julio\source\repos\SnakesAndLadders\Juego\obj\Debug\Juego.IntPrincipal.resources
+C:\Users\Julio\source\repos\SnakesAndLadders\Juego\obj\Debug\Juego.Properties.Resources.resources
+C:\Users\Julio\source\repos\SnakesAndLadders\Juego\obj\Debug\Juego.csproj.GenerateResource.cache
+C:\Users\Julio\source\repos\SnakesAndLadders\Juego\obj\Debug\Juego.csproj.CoreCompileInputs.cache
+C:\Users\Julio\source\repos\SnakesAndLadders\Juego\obj\Debug\Juego.exe
+C:\Users\Julio\source\repos\SnakesAndLadders\Juego\obj\Debug\Juego.pdb
+C:\Users\Julio\source\repos\SnakesAndLadders\Juego\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Julio\source\repos\SnakesAndLadders\Juego\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Julio\source\repos\SnakesAndLadders\Juego\obj\Debug\Juego.csprojAssemblyReference.cache
+C:\Users\Julio\source\repos\SnakesAndLadders\Juego\obj\Debug\Juego.csproj.CopyComplete
