@@ -18,7 +18,20 @@ namespace Juego {
         public int CantJugadores;
         private List<Obstaculo> Obstaculos = new List<Obstaculo>();
         private bool SentidoAscendente = true; //true: 1,2,3,4 false: 4,3,2,1
-        private static readonly string RutaJSON = "..\\..\\JSON\\Tableros.json";
+        private readonly string rutaJSON = "..\\..\\JSON\\Tableros.json";
+
+        public string RutaJSON {
+            get { return rutaJSON; }         
+        }
+        
+        private bool isRandomTab = true;
+
+        public bool IsRandomTab {
+            get { return isRandomTab; }
+            set { isRandomTab = value; }
+        }
+
+        public int IdTablero { get; set; }
 
 
         public Jugador[] Jugadores { get => jugadores; set => jugadores = value; }
@@ -33,8 +46,20 @@ namespace Juego {
             dado2 = new Dado();
             estadoJugador = 1;
 
-            GenerarObstaculos();
+            //EleccionTablero();
+            //GenerarObstaculos();
 
+        }
+
+        public void EleccionTablero() {
+            if (isRandomTab) 
+                TableroRandomGen();                            
+        }
+
+        private void TableroRandomGen() {
+            Random random = new Random();
+            int cantidadTableros = ServiceTableroJSON.GetCantidadTableros(RutaJSON);
+            IdTablero = random.Next(1, cantidadTableros + 1);
         }
 
         public void AgregarJugadores(Jugador[] jugadores) {
@@ -68,9 +93,9 @@ namespace Juego {
         }
 
         public void GenerarObstaculos() {            
-            Obstaculos.AddRange(ServiceRevertirSerntidoJSON.GetRevertirSerntidoFromJSON(RutaJSON, 1));
-            Obstaculos.AddRange(ServiceEscaleraJSON.GetEscalerasFromJSON(RutaJSON, 1));
-            Obstaculos.AddRange(ServiceSerpienteJSON.GetSerpientesFromJSON(RutaJSON, 1));
+            Obstaculos.AddRange(ServiceRevertirSerntidoJSON.GetRevertirSerntidoFromJSON(RutaJSON, IdTablero));
+            Obstaculos.AddRange(ServiceEscaleraJSON.GetEscalerasFromJSON(RutaJSON, IdTablero));
+            Obstaculos.AddRange(ServiceSerpienteJSON.GetSerpientesFromJSON(RutaJSON, IdTablero));
         }
 
         public void CambiarSentido() {
