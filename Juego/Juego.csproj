@@ -60,6 +60,7 @@
     <Compile Include="Casillas\ServiceEscaleraJSON.cs" />
     <Compile Include="Casillas\ServiceRevertirSerntidoJSON.cs" />
     <Compile Include="Casillas\ServiceSerpienteJSON.cs" />
+    <Compile Include="Casillas\ServiceTableroJSON.cs" />
     <Compile Include="Dado.cs" />
     <Compile Include="IntConfigJuego.cs">
       <SubType>Form</SubType>
