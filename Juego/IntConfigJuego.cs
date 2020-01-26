@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Juego.Casillas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,10 @@ namespace Juego
         private Juego juego;
 
         private int cantJugadores = 2;
+
+        private bool IsRandom = true;
+
+        private int IdTablero = 0;
 
         private TextBox[] txtBoxJugadores;
 
@@ -89,6 +94,14 @@ namespace Juego
                     jugadores[i] = new Jugador(txtBoxJugadores[i].Text);
 
                 juego.AgregarJugadores(jugadores);
+
+                if (!IsRandom) {
+                    juego.IsRandomTab = false;
+                    juego.IdTablero = IdTablero;
+                }
+                    
+                juego.EleccionTablero();
+                juego.GenerarObstaculos();
                 Close();
             }
             else
@@ -97,6 +110,51 @@ namespace Juego
 
             }
 
+        }
+
+        private void Establecer_CheckedChanged(object sender, EventArgs e) {
+            if (ckEstablecerTab.Checked == true) {                
+                cbEstablecerTablero.Visible = true;
+                cbEstablecerTablero.Enabled = true;
+                ckEstablecerTab.Enabled = false;
+                ckRandomTab.Checked = false;
+                string ruta = juego.RutaJSON;
+                int cantidad = ServiceTableroJSON.GetCantidadTableros(ruta);
+
+                cbEstablecerTablero.Items.Clear();
+                for (int i = 1; i <= cantidad; i++) {
+                    cbEstablecerTablero.Items.Add(i.ToString());
+                }
+                if (cbEstablecerTablero.Items.Count >0)
+                    cbEstablecerTablero.SelectedIndex = 0;
+
+                IsRandom = false;
+            } else {
+                ckEstablecerTab.Enabled = true;
+                cbEstablecerTablero.Enabled = false;
+                cbEstablecerTablero.Visible = false;
+                IsRandom = true;
+            }
+        }
+
+        private void Random_CheckedChanged(object sender, EventArgs e) {
+            if (ckRandomTab.Checked == true) {
+                ckRandomTab.Enabled = false;
+                ckEstablecerTab.Checked = false;
+                IsRandom = true;
+            } else {
+                ckRandomTab.Enabled = true;
+                IsRandom = false;
+            }
+        }
+
+        private void cbEstablecerTablero_SelectedIndexChanged(object sender, EventArgs e) {
+            try {                
+                IdTablero = (int) Convert.ToInt32(cbEstablecerTablero.Text);                
+            }
+            catch (Exception) {
+                IsRandom = true;                
+            }
         }
     }
 }

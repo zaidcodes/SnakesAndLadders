@@ -1,0 +1,106 @@
+{
+    "Tableros": [
+        {
+            "Escaleras": [
+                {
+                    "Origen": 8,
+                    "Destino": 34
+                },
+                {
+                    "Origen": 30,
+                    "Destino": 70
+                },
+                {
+                    "Origen": 38,
+                    "Destino": 62
+                },
+                {
+                    "Origen": 56,
+                    "Destino": 82
+                },
+                {
+                    "Origen": 66,
+                    "Destino": 91
+                }
+            ],
+            "Serpientes": [
+                {
+                    "Origen": 36,
+                    "Destino": 5
+                },
+                {
+                    "Origen": 53,
+                    "Destino": 3
+                },
+                {
+                    "Origen": 60,
+                    "Destino": 29
+                },
+                {
+                    "Origen": 88,
+                    "Destino": 51
+                },
+                {
+                    "Origen": 99,
+                    "Destino": 55
+                }
+            ],
+            "RevertirSentido": [
+                {
+                    "Origen": 10
+                },
+                {
+                    "Origen": 11
+                },
+                {
+                    "Origen": 21
+                },
+                {
+                    "Origen": 40
+                },
+                {
+                    "Origen": 71
+                },
+                {
+                    "Origen": 80
+                },
+                {
+                    "Origen": 90
+                },
+                {
+                    "Origen": 100
+                }
+            ]
+        },
+        {
+            "Escaleras": [
+                {
+                    "Origen": 11,
+                    "Destino": 21
+                },
+                {
+                    "Origen": 31,
+                    "Destino": 41
+                }
+            ],
+            "Serpientes": [
+                {
+                    "Origen": 51,
+                    "Destino": 61
+                },
+                {
+                    "Origen": 71,
+                    "Destino": 81
+                }
+            ],
+            "RevertirSentido": [
+                {
+                    "Origen": 11
+                },
+                {
+                    "Origen": 101
+                }
+            ]
+        }
+    ]
+}
